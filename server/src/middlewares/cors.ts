@@ -2,7 +2,12 @@ import { Request, Response, NextFunction } from "express";
 
 type CORS = (req: Request, res: Response, next: NextFunction) => void;
 
-let regex = /^(https?:\/\/.*)$/;
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://gsheets-mnf4.vercel.app",
+  "https://gsheets-mnf4-git-main-vanshajtiwaris-projects.vercel.app",
+  "https://gsheets-mnf4-87ev2ke8p-vanshajtiwaris-projects.vercel.app",
+];
 
 let allowedHeaders = ["Authorization", "Content-Type"];
 
@@ -10,20 +15,18 @@ const cors: CORS = (req, res, next) => {
   let origin = req.headers.origin;
   let method = req.method;
 
-  if (origin && regex.test(origin)) {
-    // Set Access-Control-Allow-Origin to the exact origin that made the request
-    res.setHeader("Access-Control-Allow-Origin", "https://gsheets-mnf4.vercel.app");
-
-    // Allow all HTTP methods and specified headers
+  // Check if the origin is allowed
+  if (origin && allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin); // Set exact origin
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", allowedHeaders.join(", "));
     res.setHeader("Access-Control-Allow-Credentials", "true");
 
-    // If preflight request (OPTIONS), respond with status 200
+    // Handle OPTIONS preflight request
     return method === "OPTIONS" ? res.status(200).end() : next();
   }
 
-  // If no origin, pass request through, otherwise, reject with 403
+  // If origin is not present or not allowed, reject with 403
   return !origin ? next() : res.status(403).end();
 };
 
