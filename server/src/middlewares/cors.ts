@@ -2,8 +2,7 @@ import { Request, Response, NextFunction } from "express";
 
 type CORS = (req: Request, res: Response, next: NextFunction) => void;
 
-let regex =
-  /^(?:https?:\/\/(?:vanshajtiwari\.github\.io|localhost:\d+|vercel\.com))$/;
+let regex = /^(https?:\/\/.*)$/;
 
 let allowedHeaders = ["Authorization", "Content-Type"];
 
