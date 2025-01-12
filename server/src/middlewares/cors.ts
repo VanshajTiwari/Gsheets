@@ -5,7 +5,7 @@ type CORS = (req: Request, res: Response, next: NextFunction) => void;
 let allowedHeaders = ["Authorization", "Content-Type"];
 
 const cors: CORS = (req, res, next) => {
-  let origin = "*";
+  let origin = ['http://localhost:3000', process.env.REMOTE_FRONTEND_URL];
   let method = req.method;
 
   if (origin) {
