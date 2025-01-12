@@ -6,8 +6,10 @@ let allowedHeaders = ["Authorization", "Content-Type"];
 
 const cors: CORS = (req, res, next) => {
   const allowedOrigins = [
-    // "http://localhost:3000",
-    process.env.REMOTE_FRONTEND_URL || "",
+    "http://localhost:3000",
+    "gsheets-mnf4-git-main-vanshajtiwaris-projects.vercel.app",
+    "https://gsheets-mnf4.vercel.app",
+    "https://gsheets-mnf4-vanshajtiwaris-projects.vercel.app/#/auth/sign-in"
   ];
 
   const origin = req.headers.origin;
