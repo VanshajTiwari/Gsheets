@@ -1,7 +1,7 @@
 const BASE_URL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:8080"
-    : process.env.VERCEL_URL;
+    : process.env.REMOTE_BACKEND_URL;
 
 export const USER_URL = `${BASE_URL}/api/user`;
 export const SHEET_URL = `${BASE_URL}/api/sheet`;
