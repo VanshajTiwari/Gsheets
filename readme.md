@@ -109,32 +109,49 @@ Implemented data quality functions:
    cd Gsheets
    ```
 
-3. Install dependencies:
+3. Install dependencies in both server and client Dir:
+   Go to the root of server directory and client directory then run below cmd.
    ```bash
    npm install
    ```
+5. Create the `.env` Files
+You need to create two `.env` files—one for the **server** and one for the **client**.
 
-4. Start the backend server:
+Server `.env`:
+
+In the root of the server directory, create a `.env` file with the following content:
+
+```env
+PORT=8080
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRE=2h
+PASSWORD=your_password
+MONGO_URI_DEV=your_dev_mongo_uri
+MONGO_URI=your_prod_mongo_uri
+NODE_ENV=development
+```
+Cliet `.env`:
+
+In the root of the client directory, create a `.env` file with the following content:
+
+```env
+NODE_ENV=development
+```
+
+5. Start the backend server:
    ```bash
-   cd backend
-   npm dev
+   cd server
+   npm run dev
    ```
 
-5. Start the frontend development server:
+
+6. Start the frontend development server:
    ```bash
-   cd frontend
-   npm dev
+   cd client
+   npm run dev
    ```
 
 ---
-
-## Evaluation Criteria
-1. **UI Fidelity**: How closely the application mimics Google Sheets.
-2. **Functionality**: Completeness and correctness of features.
-3. **Usability**: Ease of use and intuitiveness.
-4. **Code Quality**: Maintainability and readability of the codebase.
-5. **Bonus Features**: Additional implemented functionalities.
-
 
 
 ## License

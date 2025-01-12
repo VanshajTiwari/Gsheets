@@ -87,7 +87,7 @@ export default function FormulaForX(){
               <img src={fx} className=""/>
               </div>
               {
-             <input  type="text" name="formulaforx" value={inputValue} className=" pr-4 w-full outline-none" onChange={handleInputChange} />}
+             <input  type="text" name="formulaforx" value={inputValue} className=" pr-4 w-full outline-none" onChange={(e)=>handleInputChange(e.target.value)} />}
         </div>
       </div>
     )
