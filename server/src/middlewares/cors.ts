@@ -11,14 +11,19 @@ const cors: CORS = (req, res, next) => {
   let method = req.method;
 
   if (origin && regex.test(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "*");
+    // Set Access-Control-Allow-Origin to the exact origin that made the request
+    res.setHeader("Access-Control-Allow-Origin", origin);
+
+    // Allow all HTTP methods and specified headers
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", allowedHeaders.join(", "));
     res.setHeader("Access-Control-Allow-Credentials", "true");
 
-    return method == "OPTIONS" ? res.status(200).end() : next();
+    // If preflight request (OPTIONS), respond with status 200
+    return method === "OPTIONS" ? res.status(200).end() : next();
   }
 
+  // If no origin, pass request through, otherwise, reject with 403
   return !origin ? next() : res.status(403).end();
 };
 
