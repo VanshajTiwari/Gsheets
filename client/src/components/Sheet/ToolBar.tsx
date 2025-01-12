@@ -89,8 +89,8 @@ const ToolBar = () => {
       strike: !!strike,
       underline: !!underline,
       italic: !!italic,
-      font: font || DEFAULT_ACTIVE_STYLE.font,
-      color: color || DEFAULT_ACTIVE_STYLE.color,
+      font: (font && typeof font === 'string') ? font : DEFAULT_ACTIVE_STYLE?.font || 'defaultFont',
+      color: (color && typeof color === 'string') ? color : DEFAULT_ACTIVE_STYLE?.color || 'defaultColor',      
       size: Array.isArray(size) && size.length ? size[size.length - 1] : size,
     });
   };
