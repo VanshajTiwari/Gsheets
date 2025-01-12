@@ -6,7 +6,7 @@ let allowedHeaders = ["Authorization", "Content-Type"];
 
 const cors: CORS = (req, res, next) => {
   const allowedOrigins = [
-    "http://localhost:3000",
+    // "http://localhost:3000",
     process.env.REMOTE_FRONTEND_URL || "",
   ];
 
