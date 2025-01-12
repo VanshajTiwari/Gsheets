@@ -23,7 +23,7 @@ const Header = () => {
         <Link to="/sheet/list">
           <img
             className="w-12 h-12 cursor-pointer"
-            src={getStaticUrl("/logo.png")}
+            src={"/logo.png"}
           />
         </Link>
         <div
