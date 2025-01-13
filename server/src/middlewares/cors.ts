@@ -5,7 +5,7 @@ type CORS = (req: Request, res: Response, next: NextFunction) => void;
 const allowedHeaders = ["Authorization", "Content-Type"];
 
 const cors: CORS = (req, res, next) => {
-  const origin = req.headers.origin;
+  const origin = process.env.FRONTEND_URL;
   const method = req.method;
   const allowedOrigin = process.env.FRONTEND_URL; // Use the environment variable
 

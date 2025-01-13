@@ -4,12 +4,10 @@ const connect = async () => {
   mongoose.set("strictQuery", true);
 
   let uri = (
-    process.env.NODE_ENV === "development"
-      ? process.env.MONGO_URI_DEV
-      : process.env.MONGO_URI
+    process.env.MONGO_URI_DEV
   ) as string;
 
-  let res = await mongoose.connect(uri);
+  let res = await mongoose.connect(uri,{family:4});
 
   console.log(
     "🚀 ~ file: config.ts:17 ~ MongoDB connected ~ ",
