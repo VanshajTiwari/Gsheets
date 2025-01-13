@@ -11,6 +11,7 @@ const cors: CORS = (req, res, next) => {
 
   // Check if the origin matches the allowed origin
   if (origin && origin === allowedOrigin) {
+    console.log(origin);
     res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", allowedHeaders.join(", "));
