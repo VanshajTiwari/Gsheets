@@ -241,7 +241,7 @@ const SheetList = () => {
         className="fixed flex items-center justify-center shadow-[0px_2px_10px_rgba(0,0,0,0.3),0px_0px_1px_rgba(0,0,0,0.1),inset_0px_1px_0px_rgba(255,255,255,0.25),inset_0px_-1px_0px_rgba(0,0,0,0.15)] w-14 h-14 bg-white rounded-[50%] border-[none] right-[25px] bottom-[30px]"
         onClick={handleCreateDocument}
       >
-        <img className="w-6 h-6" src={getStaticUrl("/plus.svg")} />
+        <img className="w-6 h-6" src={"/plus.svg"} />
       </button>
     </Fragment>
   );
