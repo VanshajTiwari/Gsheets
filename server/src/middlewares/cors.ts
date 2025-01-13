@@ -17,7 +17,7 @@ const cors: CORS = (req, res, next) => {
 
   // Check if the origin is allowed
   if (origin && allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin); // Set exact origin
+    res.setHeader("Access-Control-Allow-Origin", "https://gsheets-mnf4.vercel.app"); // Set exact origin
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", allowedHeaders.join(", "));
     res.setHeader("Access-Control-Allow-Credentials", "true");
