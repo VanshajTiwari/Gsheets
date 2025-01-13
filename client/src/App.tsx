@@ -7,13 +7,14 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import "react-toastify/dist/ReactToastify.css";
 import "@/assets/css/index.css";
+import Loader from "./components/Loader";
 
 export const App = () => {
   return (
     <HashRouter>
       <AuthProvider>
         <ChakraProvider>
-          <Suspense fallback="loading...">
+          <Suspense fallback={<Loader/>}>
             <Router />
           </Suspense>
           <ToastContainer

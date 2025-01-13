@@ -150,7 +150,7 @@ const SignUp = () => {
         </div>
       </div>
       <div className={styles.poster}>
-        <img src={getStaticUrl("/account.svg")} alt="" />
+        <img src={"/account.svg"} alt="" />
       </div>
     </div>
   );
