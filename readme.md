@@ -48,7 +48,7 @@ Implemented data quality functions:
 ## Tech Stack
 
 ### 1. **Frontend**
-- **React.js**: For building a responsive and dynamic user interface.
+- **Angular**: For building a responsive and dynamic user interface.
 - **TypeScript**: For type safety and maintainability.
 
 ### 2. **Backend**
